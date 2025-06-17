@@ -1,0 +1,20 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.appWrapper {
+  width: 75%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  display: flex;
+  justify-content: center;
+  background-color: chocolate;
+}
+
+.testingBody {
+  height: 4000px;
+  width: 700px;
+  background-color: chocolate;
+}

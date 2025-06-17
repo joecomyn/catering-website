@@ -1,0 +1,16 @@
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.mobileHeader {
+    left: 0;
+    width: 100%;
+}
+
+.desktopHeader {
+    left: 12.5%;
+    width: 75%;
+    height: 150px;
+}

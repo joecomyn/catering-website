@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  font-family: sans-serif;
+  color: #333;
+}
+
+/* New container to constrain content width */
+.container {
+  width: clamp(320px, 70%, 1200px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+  background: #f5f5f5;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background: #0070f3;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.feature {
+  flex: 1;
+  text-align: center;
+}
+
+.feature h2 {
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+}

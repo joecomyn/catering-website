@@ -1,5 +1,5 @@
 {
-  "name": "norfolk-catering",
+  "name": "catering-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,12 +12,17 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-responsive": "^10.0.1"
+    "react-native-svg": "^15.12.0",
+    "react-native-web": "^0.20.0",
+    "styled-components": "^6.1.19",
+    "tamagui": "^1.126.18"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "@types/react-native": "^0.72.8",
+    "@types/styled-components": "^5.1.34",
     "@vitejs/plugin-react-swc": "^3.9.0",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",

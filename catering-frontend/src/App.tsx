@@ -2,47 +2,24 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import HeroSlideshow, { type Slide } from './components/HeroSlideshow/HeroSlideshow';
-
-const slides: Slide[] = [
-  {
-    imageSrc: '/images/slide1.jpg',
-    headline: 'Crate to plate, Fresh everyday.',
-    subHeadline: 'The Norfolk way',
-    ctaLabel: 'Our Story',
-    ctaLink: '#our-story',
-  },
-  {
-    imageSrc: '/images/slide2.jpg',
-    headline: 'Family-owned tradition',
-    subHeadline: 'Quality you can taste',
-    ctaLabel: 'Our Products',
-    ctaLink: '#our-products',
-  },
-  {
-    imageSrc: '/images/slide3.jpg',
-    headline: 'Serving with care',
-    subHeadline: 'From our kitchen to yours',
-    ctaLabel: 'Contact Us',
-    ctaLink: '#contact',
-  },
-];
+import HeroSlideshow from './components/HeroSlideshow/HeroSlideshow';
 
 const App: React.FC = () => {
-  const [showHero, setShowHero] = useState(true);
+  const [hasScrolled, setHasScrolled] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      //setShowHero(window.scrollY < window.innerHeight);
+      setHasScrolled(window.scrollY < window.screenTop);
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <div className="app">
-      <Header transparent={showHero} />
-      <HeroSlideshow slides={slides} visible={showHero} />
+      <Header transparent={hasScrolled} />
+      <HeroSlideshow visible={hasScrolled} />
 
       <div className="container">
         {/* Main content sections */}

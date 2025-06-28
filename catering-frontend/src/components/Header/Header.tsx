@@ -3,6 +3,7 @@ import './Header.css';
 import { InstagramIcon } from '../../assets/Icons/InstagramIcon';
 import { FacebookIcon } from '../../assets/Icons/FacebookIcon';
 import { LinkedInIcon } from '../../assets/Icons/LinkedInIcon';
+import headerLogo from '../../assets/Images/General/logo_main.png';
 
 interface HeaderProps {
   transparent: boolean;
@@ -21,9 +22,12 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
   return (
     <header className={`header ${transparent ? 'transparent' : ''}`}>      
       <div className="header__inner container">
-        <div className="logo">Norfolk Catering</div>
+        <div className="logo">
+          <img src={headerLogo} alt="Norfolk catering logo" />
+        </div>
 
         <nav className="nav--desktop">
+
           <ul>
             {navItems.map(item => (
               <li key={item.label}>
@@ -31,11 +35,13 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
               </li>
             ))}
           </ul>
+
           <div className="social-icons">
-            <a href="https://instagram.com/…"><InstagramIcon /></a>
-            <a href="https://facebook.com/…"><FacebookIcon /></a>
-            <a href="https://linkedin.com/…"><LinkedInIcon /></a>
+            <a href="https://instagram.com/…"><InstagramIcon className="social-icon-svg"/></a>
+            <a href="https://facebook.com/…"><FacebookIcon className="social-icon-svg"/></a>
+            <a href="https://linkedin.com/…"><LinkedInIcon className="social-icon-svg"/></a>
           </div>
+
         </nav>
 
         <button

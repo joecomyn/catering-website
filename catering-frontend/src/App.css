@@ -9,7 +9,6 @@
   color: #333;
 }
 
-/* New container to constrain content width */
 .container {
   width: clamp(320px, 70%, 1200px);
   max-width: 1200px;

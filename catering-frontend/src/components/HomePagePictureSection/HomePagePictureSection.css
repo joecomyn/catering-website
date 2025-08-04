@@ -1,0 +1,41 @@
+.picture-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  margin: 4rem 0;
+}
+.picture-section.left {
+  flex-direction: row;
+}
+.picture-section.right {
+  flex-direction: row-reverse;
+}
+
+.image-container {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+
+.section-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.text-container {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}

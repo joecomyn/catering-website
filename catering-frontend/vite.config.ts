@@ -5,6 +5,9 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  preview: {
+    allowedHosts: ['catering-website-ec7m.onrender.com']
+  },
   resolve: {
     alias: {
       'react-native': 'react-native-web',

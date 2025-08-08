@@ -37,9 +37,9 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
           </ul>
 
           <div className="social-icons">
-            <a href="https://instagram.com/…"><InstagramIcon className="social-icon-svg"/></a>
-            <a href="https://facebook.com/…"><FacebookIcon className="social-icon-svg"/></a>
-            <a href="https://linkedin.com/…"><LinkedInIcon className="social-icon-svg"/></a>
+            <a href="https://www.instagram.com/norfolkcatering/"><InstagramIcon className="social-icon-svg"/></a>
+            <a href="https://www.facebook.com/NorfolkCatering/"><FacebookIcon className="social-icon-svg"/></a>
+            <a href="https://uk.linkedin.com/company/norfolk-catering-limited"><LinkedInIcon className="social-icon-svg"/></a>
           </div>
 
         </nav>

@@ -14,16 +14,19 @@ const HomePagePictureSection: React.FC<HomePagePictureSectionProps> = ({
   text,
   orientation = 'left',
 }) => {
-  const containerClass = `picture-section ${orientation}`;
-
   return (
-    <section className={containerClass}>
-      <div className="image-container">
-        <img src={imageSrc} alt={title} className="section-image" />
+    <section className={`picture-section ${orientation}`}>
+      <div className="picture-container">
+        <div className={`green-bg ${orientation}`} />
+        <div className={`image-wrapper ${orientation}`}>
+          <div className={`image-inner ${orientation}`}>
+            <img src={imageSrc} alt={title} className="section-image" />
+          </div>
+        </div>
       </div>
-      <div className="text-container">
-        <h2 className="section-title">{title}</h2>
-        <p className="section-text">{text}</p>
+      <div className="text-wrapper">
+        <h2>{title}</h2>
+        <p>{text}</p>
       </div>
     </section>
   );

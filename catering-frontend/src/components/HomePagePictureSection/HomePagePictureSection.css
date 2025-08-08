@@ -3,39 +3,85 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  width: 100%;
   margin: 4rem 0;
 }
+
 .picture-section.left {
   flex-direction: row;
 }
+
 .picture-section.right {
   flex-direction: row-reverse;
 }
 
-.image-container {
+.picture-container {
+  position: relative;       /* ➞ make children absolute relative to this */
   flex: 1 1 50%;
-  max-width: 50%;
+  height: auto;             /* or set a fixed height if you prefer */
 }
 
+/* Green block under the photo */
+.green-bg {
+  position: absolute;
+  width: calc(100% - 24px); /* full width minus your offsets */
+  height: calc(100% - 24px);
+  background: #006837;
+  border-radius: 24px;
+  z-index: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.701);
+}
+
+.green-bg.left {
+  transform: skewY(-4deg);
+  top: -12px;
+  right: -12px;
+}
+
+.green-bg.right {
+transform: skewX(4deg);
+  top: -12px;
+  left: -12px;
+}
+/* The wrapper you already had */
+.image-wrapper {
+  position: relative;       /* so image-inner’s counter-skew sits on top */
+  overflow: hidden;
+  border-radius: 24px;
+  transform: skewY(-4deg);
+  z-index: 1;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.606);
+}
+
+/* Counter-skew + scale so the img itself is level */
+.image-inner {
+  transform: skewY(4deg) scale(1.20);
+  transform-origin: center;
+}
+
+/* Optional: flip skew directions for right orientation */
+.image-wrapper.right { transform: skewY(4deg); }
+.image-inner.right   { transform: skewY(-4deg) scale(1.20); }
+.green-bg.right      { transform: skewY(4deg); }
+
+/* Finally the img */
 .section-image {
+  display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: auto;
   object-fit: cover;
-  border-radius: 8px;
 }
 
-.text-container {
+.text-wrapper {
   flex: 1 1 50%;
   max-width: 50%;
+  padding: 1rem;
 }
 
-.section-title {
+.text-wrapper h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.section-text {
-  font-size: 1rem;
+.text-wrapper p {
   line-height: 1.6;
 }

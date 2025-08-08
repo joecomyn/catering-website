@@ -1,7 +1,7 @@
 import React from 'react';
 import './HomePageServicesSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPeopleGroup, faTrain, faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faPeopleGroup, faTrain, faBuilding, faChampagneGlasses } from '@fortawesome/free-solid-svg-icons';
 
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
@@ -37,10 +37,19 @@ const services: ServiceItem[] = [
     serviceName: 'BUSINESS & INDUSTRY',
     subServices: [
       'Contract Catering',
-      'Workplace Catering',
+      'Workplace Catering/ Business Lunches',
       'Independent Catering',
       'Vending',
-      'Business Lunches',
+    ],
+  },
+  {
+    icon: faChampagneGlasses,
+    serviceName: 'PRIVATE CATERING',
+    subServices: [
+      'Private Functions',
+      'Occasions and Celebrations',
+      'Events',
+      'Parties',
     ],
   },
 ];

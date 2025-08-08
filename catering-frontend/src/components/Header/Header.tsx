@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Header.css';
-import { InstagramIcon } from '../../assets/Icons/InstagramIcon';
-import { FacebookIcon } from '../../assets/Icons/FacebookIcon';
-import { LinkedInIcon } from '../../assets/Icons/LinkedInIcon';
+import { InstagramIcon } from '../../assets/icons/InstagramIcon';
+import { FacebookIcon } from '../../assets/icons/FacebookIcon';
+import { LinkedInIcon } from '../../assets/icons/LinkedInIcon';
 import headerLogo from '../../assets/Images/General/logo_main.png';
 
 interface HeaderProps {

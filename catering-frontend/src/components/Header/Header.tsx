@@ -37,9 +37,27 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
           </ul>
 
           <div className="social-icons">
-            <a href="https://www.instagram.com/norfolkcatering/"><InstagramIcon className="social-icon-svg"/></a>
-            <a href="https://www.facebook.com/NorfolkCatering/"><FacebookIcon className="social-icon-svg"/></a>
-            <a href="https://uk.linkedin.com/company/norfolk-catering-limited"><LinkedInIcon className="social-icon-svg"/></a>
+            <a 
+              href="https://www.instagram.com/norfolkcatering/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstagramIcon className="social-icon-svg"/>
+            </a>
+            <a 
+              href="https://www.facebook.com/NorfolkCatering/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookIcon className="social-icon-svg"/>
+            </a>
+            <a 
+              href="https://uk.linkedin.com/company/norfolk-catering-limited"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedInIcon className="social-icon-svg"/>
+            </a>
           </div>
 
         </nav>

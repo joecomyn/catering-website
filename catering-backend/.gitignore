@@ -10,6 +10,7 @@ obj/
 
 # Others
 .vscode/
+.vs/
 *.log
 appsettings.*.json
 .env

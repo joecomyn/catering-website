@@ -1,0 +1,25 @@
+# ---- build stage ----
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# copy csproj first
+COPY catering-backend/backend.csproj catering-backend/
+RUN dotnet restore catering-backend/backend.csproj
+
+# copy the rest of the source
+COPY . .
+
+# publish
+RUN dotnet publish catering-backend/backend.csproj -c Release -o /app/publish /p:UseAppHost=false
+
+# ---- runtime stage ----
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+
+# expose port 8080 for PaaS
+ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 8080
+
+COPY --from=build /app/publish ./
+
+ENTRYPOINT ["dotnet", "backend.dll"]

@@ -21,9 +21,7 @@ public sealed class ContactController : ControllerBase
     {
         if (!ModelState.IsValid) return ValidationProblem(ModelState);
 
-        var subject = string.IsNullOrWhiteSpace(form.Enquiry)
-            ? $"New contact form from {form.Name}"
-            : form.Enquiry;
+        var subject = $"Enquiry from {form.Name} {DateTimeOffset.Now:yyyy-MM-dd}";
 
         var html = $@"
             <h2>New Contact Form Submission</h2>

@@ -11,6 +11,7 @@ import HomePagePictureSection from './components/HomePagePictureSection/HomePage
 import HomePageServicesSection from './components/HomePageServicesSection/HomePageServicesSection';
 import HomePagePolicyGrid from './components/HomePagePoliciesSection/HomePagePolicyGrid';
 import ContactForm from './components/ContactForm/ContactForm';
+import Footer from './components/Footer/Footer';
 
 const App: React.FC = () => {
   const [hasScrolled, setHasScrolled] = useState(true);
@@ -25,7 +26,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="app">
+    <div id="top" className="app">
       <Header transparent={hasScrolled} />
       <HeroSlideshow visible={hasScrolled} />
 
@@ -51,13 +52,15 @@ const App: React.FC = () => {
       </div>
 
       {/* Parallax Banner Component */}
-      <ParallaxBanner className='parallax-banner'>
-        <ParallaxBannerLayer image={services} speed={-10} className='parallax-banner-image'/>
-        <ParallaxBannerLayer className='parallax-banner-content'>
-          <h1 className='parallax-text'>Our Services</h1>
-            <HomePageServicesSection />
-        </ParallaxBannerLayer>
-      </ParallaxBanner>
+      <section id="our-services" className="section">
+        <ParallaxBanner className='parallax-banner'>
+          <ParallaxBannerLayer image={services} speed={-10} className='parallax-banner-image'/>
+          <ParallaxBannerLayer className='parallax-banner-content'>
+            <h1 className='parallax-text'>Our Services</h1>
+              <HomePageServicesSection />
+          </ParallaxBannerLayer>
+        </ParallaxBanner>
+      </section>
 
       <div className="container">
         <section id="our-promises" className="section">
@@ -68,9 +71,7 @@ const App: React.FC = () => {
           <ContactForm/>
         </section>
       </div>
-      <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} Norfolk Catering. All rights reserved.</p>
-      </footer>
+      <Footer/>
     </div>
   );
 };

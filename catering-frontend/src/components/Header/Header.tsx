@@ -4,16 +4,18 @@ import { InstagramIcon } from '../../assets/icons/InstagramIcon';
 import { FacebookIcon } from '../../assets/icons/FacebookIcon';
 import { LinkedInIcon } from '../../assets/icons/LinkedInIcon';
 import headerLogo from '../../assets/Images/General/logo_main.png';
+import scrollToId from '../../services/utils/scrollToId';
 
 interface HeaderProps {
   transparent: boolean;
 }
 
 const navItems = [
-  { label: 'Our Story', href: '#our-story' },
-  { label: 'Our Products', href: '#our-products' },
-  { label: 'Our Promises', href: '#our-promises' },
-  { label: 'Contact Us', href: '#contact' },
+  { label: 'Our Story', href: 'our-story' },
+  { label: 'Our Products', href: 'our-products' },
+  { label: 'Our Services', href: 'our-services' },
+  { label: 'Our Promises', href: 'our-promises' },
+  { label: 'Contact Us', href: 'contact' },
 ];
 
 const Header: React.FC<HeaderProps> = ({ transparent }) => {
@@ -22,7 +24,11 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
   return (
     <header className={`header ${transparent ? 'transparent' : ''}`}>      
       <div className="header__inner container">
-        <div className="logo">
+        <div 
+          className="logo"
+          onClick={() => scrollToId("top", 120)}
+          style={{ cursor: 'pointer' }}
+        >
           <img src={headerLogo} alt="Norfolk catering logo" />
         </div>
 
@@ -31,7 +37,17 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
           <ul>
             {navItems.map(item => (
               <li key={item.label}>
-                <a href={item.href}>{item.label}</a>
+                <a 
+                  href={item.href} 
+                  onClick={
+                    (e) => {
+                      e.preventDefault();
+                      scrollToId(item.href, 120);
+                    }
+                  }
+                >
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -75,8 +91,18 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
         <div className="nav--mobile container">
           <ul>
             {navItems.map(item => (
-              <li key={item.label} onClick={() => setMobileOpen(false)}>
-                <a href={item.href}>{item.label}</a>
+              <li key={item.label}>
+                <a 
+                  href={item.href} 
+                  onClick={
+                    (e) => {
+                      e.preventDefault();
+                      scrollToId(item.href, 120);
+                    }
+                  }
+                >
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>

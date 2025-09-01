@@ -1,6 +1,4 @@
-/* src/components/HomePageServicesSection.css */
 .services-section {
-  width: 100%;
   padding: 1rem 1rem;
 }
 
@@ -61,3 +59,42 @@
 .sub-service-item + .sub-service-item {
   margin-top: 4px;
 }
+
+.services-section.mobile {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.embla {
+  overflow: hidden;
+  padding: 0 1rem;
+}
+.embla__container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  max-width: 420px;
+}
+
+.embla__prev,
+.embla__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.embla__prev { left: 6px; }
+.embla__next { right: 6px; }
+.embla__prev:hover,
+.embla__next:hover { background: rgba(0,0,0,0.5); }

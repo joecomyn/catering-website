@@ -85,3 +85,44 @@ transform: skewX(4deg);
 .text-wrapper p {
   line-height: 1.6;
 }
+
+/* Base: make headings/body responsive everywhere */
+.text-wrapper h2 {
+  /* was 2rem fixed */
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
+  margin-bottom: 0.75rem;
+}
+.text-wrapper p {
+  /* gentle scaling for body text */
+  font-size: clamp(1rem, 2.6vw, 1.075rem);
+  line-height: 1.6;
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+  .picture-section.right {
+    flex-direction: column-reverse;
+  }
+
+  .picture-section.left {
+    flex-direction: column-reverse;
+  }
+  
+  .picture-container { order: 1; flex: 0 0 auto; max-width: 100%; }
+  .text-wrapper      { order: 2; max-width: 100%; padding: 0 1rem; text-align: center; }
+
+  /* responsive type */
+  .text-wrapper h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
+  .text-wrapper p  { font-size: clamp(1rem, 3.6vw, 1.125rem); }
+
+  .picture-container, .text-wrapper {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .text-wrapper {
+    margin-top: 2rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+}

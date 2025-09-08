@@ -16,6 +16,19 @@ builder.Services.AddOptions<EmailOptions>()
 
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("https://norfolkcatering.co.uk/")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
+app.UseCors("AllowFrontend");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

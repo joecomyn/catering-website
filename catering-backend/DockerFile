@@ -1,17 +1,13 @@
-# ---- build ----
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
-
-# if the csproj is not in repo root, adjust the paths
+# no folder prefix now, context is already catering-backend/
 COPY backend.csproj ./
 RUN dotnet restore backend.csproj
 
 COPY . .
 RUN dotnet publish backend.csproj -c Release -o /app/publish /p:UseAppHost=false
 
-# ---- runtime ----
-FROM mcr.microsoft.com/dotnet/aspnet:9.0
-WORKDIR /home/app                      # writable for non-root
-ENV ASPNETCORE_URLS=http://0.0.0.0:8080
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
+WORKDIR /app
+ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 8080
 COPY --from=build /app/publish ./
-ENTRYPOINT ["dotnet","backend.dll"]    # change name if your dll differs
+ENTRYPOINT ["dotnet", "backend.dll"]

@@ -11,7 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       'react-native': 'react-native-web',
-      '@tamagui/core': path.resolve('./node_modules/@tamagui/core'),      
+      '@tamagui/core': path.resolve('./node_modules/@tamagui/core'),
     }
   }
 })

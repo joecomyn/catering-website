@@ -1,13 +1,14 @@
-# no folder prefix now, context is already catering-backend/
+# ---- build ----
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
 COPY backend.csproj ./
 RUN dotnet restore backend.csproj
-
 COPY . .
-RUN dotnet publish backend.csproj -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish backend.csproj -c Release -o /out /p:UseAppHost=false
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
-WORKDIR /app
-ENV ASPNETCORE_URLS=http://+:8080
-EXPOSE 8080
-COPY --from=build /app/publish ./
-ENTRYPOINT ["dotnet", "backend.dll"]
+# ---- runtime ----
+FROM mcr.microsoft.com/dotnet/aspnet:9.0
+WORKDIR /home/app
+ENV ASPNETCORE_URLS=http://0.0.0.0:8080
+COPY --from=build /out ./
+ENTRYPOINT ["dotnet","backend.dll"]

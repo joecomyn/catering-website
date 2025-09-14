@@ -21,7 +21,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("https://norfolkcatering.co.uk/")
+            policy.WithOrigins([
+                "https://norfolkcatering.co.uk/",
+                "https://www.norfolkcatering.co.uk",
+                "http://localhost:5173"
+            ])
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });

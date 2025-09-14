@@ -17,7 +17,7 @@ public sealed class ContactController : ControllerBase
     [Consumes("application/json")]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> Post([FromForm] ContactForm form, CancellationToken ct)
+    public async Task<IActionResult> Post([FromBody] ContactForm form, CancellationToken ct)
     {
         if (!ModelState.IsValid) return ValidationProblem(ModelState);
 

@@ -14,7 +14,7 @@ public sealed class ContactController : ControllerBase
 
     // Accept multipart/form-data and x-www-form-urlencoded
     [HttpPost]
-    [Consumes("multipart/form-data", "application/x-www-form-urlencoded")]
+    [Consumes("application/json")]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Post([FromForm] ContactForm form, CancellationToken ct)

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './HeroSlideshow.css';
-import slide1 from '../../assets/Images/HeroSlides/slide1.png'
+import slide1 from '../../assets/Images/HeroSlides/slide1.jpeg'
 import slide2 from '../../assets/Images/HeroSlides/slide2.jpg'
 import slide3 from '../../assets/Images/HeroSlides/slide3.jpeg'
 import { motion } from 'framer-motion'
